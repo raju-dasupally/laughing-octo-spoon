@@ -47,6 +47,12 @@ jobs:
         run: |
           mv firstwebapp/* .
           rm -rf firstwebapp
+      
+      - name: List files
+        run: ls
           
       - name: Build Dotnet app
         run: sudo dotnet build --configuration Release
+        
+      - name: List files
+        run: ls
