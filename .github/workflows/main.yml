@@ -42,3 +42,11 @@ jobs:
       
       - name: Generate webapp
         run: dotnet new webapp -n AspNetCoreDemo -o firstwebapp 
+        
+      - name: Copy Dotnet code to root
+        run: |
+          mv firstwebapp/* .
+          rm -rf firstwebapp
+          
+      - name: Build Dotnet app
+        run: sudo dotnet build --configuration Release
